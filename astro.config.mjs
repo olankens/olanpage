@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://olankens.github.io',
-  base: '/olankens',
+  base: '/olanpage',
   vite: {
     plugins: [tailwindcss()],
   },
