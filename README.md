@@ -9,6 +9,6 @@
 
 ---
 
-### Previews
+### Some Previews
 
-<picture><source media="(prefers-color-scheme: dark)" srcset=".assets/308x640-dark.svg"><img src=".assets/308x640.svg" width="24.0625%"></picture><img src=".assets/1x1.gif" width="1.25%"/><picture><source media="(prefers-color-scheme: dark)" srcset=".assets/956x640-dark.svg"><img src=".assets/956x640.svg" width="74.6875%"></picture>
+<picture><img src=".assets/308x640.png" width="24.0625%"></picture><img src=".assets/1x1.gif" width="1.25%"/><picture><img src=".assets/956x640.png" width="74.6875%"></picture>
