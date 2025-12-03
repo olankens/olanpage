@@ -1,0 +1,75 @@
+name: Create Previews
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build Astro site
+        run: npm run build
+      - name: Install Playwright
+        run: |
+          npm install -D playwright
+          npx playwright install --with-deps chromium
+      - name: Start preview server
+        run: npm run preview &
+        env:
+          HOST: 0.0.0.0
+          PORT: 4321
+      - name: Wait for server
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:4321; do sleep 2; done'
+      - name: Create previews
+        run: |
+          node <<'EOF'
+          const { chromium } = require('playwright');
+          (async () => {
+            const browser = await chromium.launch();
+            const context = await browser.newContext();
+            // Create 308x640 preview
+            const page1 = await context.newPage();
+            await page1.setViewportSize({ width: 308 * 1.5, height: 640 * 1.5 });
+            await page1.goto('http://localhost:4321');
+            await page1.waitForLoadState('networkidle');
+            await page1.screenshot({ path: '308x640.png', fullPage: false });
+            await page1.close();
+            // Create 956x640 preview
+            const page2 = await context.newPage();
+            await page2.setViewportSize({ width: 956 * 1.5, height: 640 * 1.5 });
+            await page2.goto('http://localhost:4321');
+            await page2.waitForLoadState('networkidle');
+            await page2.screenshot({ path: '956x640.png', fullPage: false });
+            await page2.close();
+            await browser.close();
+            console.log('Previews created successfully!');
+          })();
+          EOF
+      - name: Upload previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: previews
+          path: |
+            308x640.png
+            956x640.png
+          retention-days: 30
+      - name: Commit previews (optional)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.email "olankens@users.noreply.github.com"
+          git config --local user.name "olankens"
+          git add -f 308x640.png 956x640.png
+          git diff --staged --quiet || git commit -m "Update website previews"
+          git push

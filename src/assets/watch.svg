@@ -1,0 +1,186 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="273" height="257"><defs><style xmlns="http://www.w3.org/1999/xhtml" type="text/css">@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100;
+  src: url('https://frame0.app/fonts/Inter-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 100;
+  src: url('https://frame0.app/fonts/Inter-ThinItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200;
+  src: url('https://frame0.app/fonts/Inter-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 200;
+  src: url('https://frame0.app/fonts/Inter-ExtraLightItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://frame0.app/fonts/Inter-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  src: url('https://frame0.app/fonts/Inter-LightItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/Inter-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/Inter-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://frame0.app/fonts/Inter-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 500;
+  src: url('https://frame0.app/fonts/Inter-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://frame0.app/fonts/Inter-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 600;
+  src: url('https://frame0.app/fonts/Inter-SemiBoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/Inter-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/Inter-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  src: url('https://frame0.app/fonts/Inter-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 800;
+  src: url('https://frame0.app/fonts/Inter-ExtraBoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/SourceSerifPro-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/SourceSerifPro-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/SourceSerifPro-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Source Serif Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/SourceSerifPro-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/IBMPlexMono-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/IBMPlexMono-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/IBMPlexMono-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Loranthus';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/Loranthus-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Loranthus';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/Loranthus-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Loranthus';
+  font-style: italic;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/Loranthus-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Loranthus';
+  font-style: italic;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/Loranthus-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Redacted Script';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/RedactedScript-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Redacted Script';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://frame0.app/fonts/RedactedScript-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Jojoba';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://frame0.app/fonts/Jojoba.ttf') format('truetype');
+}</style></defs><g><g><g><g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 110.33998046875013 17.58000000000004 L 120.4899804687501 17.58000000000004 L 120.4899804687501 17.58000000000004 L 120.4899804687501 17.58000000000004 A 8 8 0 0 1 128.4899804687501 25.58000000000004 L 128.4899804687501 45.5 L 128.4899804687501 45.5 L 128.4899804687501 45.5 A 8 8 0 0 1 120.4899804687501 53.5 L 110.33998046875013 53.5 L 110.33998046875013 53.5 L 110.33998046875013 53.5 A 8 8 0 0 1 102.33998046875013 45.5 L 102.33998046875013 25.58000000000004 L 102.33998046875013 25.58000000000004 L 102.33998046875013 25.58000000000004 A 8 8 0 0 1 110.33998046875013 17.58000000000004 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 110.33998046875013 17.58000000000004 L 120.4899804687501 17.58000000000004 L 120.4899804687501 17.58000000000004 L 120.4899804687501 17.58000000000004 A 8 8 0 0 1 128.4899804687501 25.58000000000004 L 128.4899804687501 45.5 L 128.4899804687501 45.5 L 128.4899804687501 45.5 A 8 8 0 0 1 120.4899804687501 53.5 L 110.33998046875013 53.5 L 110.33998046875013 53.5 L 110.33998046875013 53.5 A 8 8 0 0 1 102.33998046875013 45.5 L 102.33998046875013 25.58000000000004 L 102.33998046875013 25.58000000000004 L 102.33998046875013 25.58000000000004 A 8 8 0 0 1 110.33998046875013 17.58000000000004 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 8.499980468749982 0.5 L 112.49998046874998 0.5 L 112.49998046874998 0.5 L 112.49998046874998 0.5 A 8 8 0 0 1 120.49998046874998 8.5 L 120.49998046874998 112.5 L 120.49998046874998 112.5 L 120.49998046874998 112.5 A 8 8 0 0 1 112.49998046874998 120.5 L 8.499980468749982 120.5 L 8.499980468749982 120.5 L 8.499980468749982 120.5 A 8 8 0 0 1 0.4999804687499818 112.5 L 0.4999804687499818 8.5 L 0.4999804687499818 8.5 L 0.4999804687499818 8.5 A 8 8 0 0 1 8.499980468749982 0.5 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 8.499980468749982 0.5 L 112.49998046874998 0.5 L 112.49998046874998 0.5 L 112.49998046874998 0.5 A 8 8 0 0 1 120.49998046874998 8.5 L 120.49998046874998 112.5 L 120.49998046874998 112.5 L 120.49998046874998 112.5 A 8 8 0 0 1 112.49998046874998 120.5 L 8.499980468749982 120.5 L 8.499980468749982 120.5 L 8.499980468749982 120.5 A 8 8 0 0 1 0.4999804687499818 112.5 L 0.4999804687499818 8.5 L 0.4999804687499818 8.5 L 0.4999804687499818 8.5 A 8 8 0 0 1 8.499980468749982 0.5 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g></g><g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 254.33998046875013 17.58000000000004 L 264.4899804687501 17.58000000000004 L 264.4899804687501 17.58000000000004 L 264.4899804687501 17.58000000000004 A 8 8 0 0 1 272.4899804687501 25.58000000000004 L 272.4899804687501 45.5 L 272.4899804687501 45.5 L 272.4899804687501 45.5 A 8 8 0 0 1 264.4899804687501 53.5 L 254.33998046875013 53.5 L 254.33998046875013 53.5 L 254.33998046875013 53.5 A 8 8 0 0 1 246.33998046875013 45.5 L 246.33998046875013 25.58000000000004 L 246.33998046875013 25.58000000000004 L 246.33998046875013 25.58000000000004 A 8 8 0 0 1 254.33998046875013 17.58000000000004 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 254.33998046875013 17.58000000000004 L 264.4899804687501 17.58000000000004 L 264.4899804687501 17.58000000000004 L 264.4899804687501 17.58000000000004 A 8 8 0 0 1 272.4899804687501 25.58000000000004 L 272.4899804687501 45.5 L 272.4899804687501 45.5 L 272.4899804687501 45.5 A 8 8 0 0 1 264.4899804687501 53.5 L 254.33998046875013 53.5 L 254.33998046875013 53.5 L 254.33998046875013 53.5 A 8 8 0 0 1 246.33998046875013 45.5 L 246.33998046875013 25.58000000000004 L 246.33998046875013 25.58000000000004 L 246.33998046875013 25.58000000000004 A 8 8 0 0 1 254.33998046875013 17.58000000000004 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 152.49998046874998 0.5 L 256.49998046875 0.5 L 256.49998046875 0.5 L 256.49998046875 0.5 A 8 8 0 0 1 264.49998046875 8.5 L 264.49998046875 112.5 L 264.49998046875 112.5 L 264.49998046875 112.5 A 8 8 0 0 1 256.49998046875 120.5 L 152.49998046874998 120.5 L 152.49998046874998 120.5 L 152.49998046874998 120.5 A 8 8 0 0 1 144.49998046874998 112.5 L 144.49998046874998 8.5 L 144.49998046874998 8.5 L 144.49998046874998 8.5 A 8 8 0 0 1 152.49998046874998 0.5 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 152.49998046874998 0.5 L 256.49998046875 0.5 L 256.49998046875 0.5 L 256.49998046875 0.5 A 8 8 0 0 1 264.49998046875 8.5 L 264.49998046875 112.5 L 264.49998046875 112.5 L 264.49998046875 112.5 A 8 8 0 0 1 256.49998046875 120.5 L 152.49998046874998 120.5 L 152.49998046874998 120.5 L 152.49998046874998 120.5 A 8 8 0 0 1 144.49998046874998 112.5 L 144.49998046874998 8.5 L 144.49998046874998 8.5 L 144.49998046874998 8.5 A 8 8 0 0 1 152.49998046874998 0.5 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g></g><g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 110.33998046875013 153.57999999999993 L 120.4899804687501 153.57999999999993 L 120.4899804687501 153.57999999999993 L 120.4899804687501 153.57999999999993 A 8 8 0 0 1 128.4899804687501 161.57999999999993 L 128.4899804687501 181.4999999999999 L 128.4899804687501 181.4999999999999 L 128.4899804687501 181.4999999999999 A 8 8 0 0 1 120.4899804687501 189.4999999999999 L 110.33998046875013 189.4999999999999 L 110.33998046875013 189.4999999999999 L 110.33998046875013 189.4999999999999 A 8 8 0 0 1 102.33998046875013 181.4999999999999 L 102.33998046875013 161.57999999999993 L 102.33998046875013 161.57999999999993 L 102.33998046875013 161.57999999999993 A 8 8 0 0 1 110.33998046875013 153.57999999999993 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 110.33998046875013 153.57999999999993 L 120.4899804687501 153.57999999999993 L 120.4899804687501 153.57999999999993 L 120.4899804687501 153.57999999999993 A 8 8 0 0 1 128.4899804687501 161.57999999999993 L 128.4899804687501 181.4999999999999 L 128.4899804687501 181.4999999999999 L 128.4899804687501 181.4999999999999 A 8 8 0 0 1 120.4899804687501 189.4999999999999 L 110.33998046875013 189.4999999999999 L 110.33998046875013 189.4999999999999 L 110.33998046875013 189.4999999999999 A 8 8 0 0 1 102.33998046875013 181.4999999999999 L 102.33998046875013 161.57999999999993 L 102.33998046875013 161.57999999999993 L 102.33998046875013 161.57999999999993 A 8 8 0 0 1 110.33998046875013 153.57999999999993 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 8.499980468749982 136.5 L 112.49998046874998 136.5 L 112.49998046874998 136.5 L 112.49998046874998 136.5 A 8 8 0 0 1 120.49998046874998 144.5 L 120.49998046874998 248.5 L 120.49998046874998 248.5 L 120.49998046874998 248.5 A 8 8 0 0 1 112.49998046874998 256.5 L 8.499980468749982 256.5 L 8.499980468749982 256.5 L 8.499980468749982 256.5 A 8 8 0 0 1 0.4999804687499818 248.5 L 0.4999804687499818 144.5 L 0.4999804687499818 144.5 L 0.4999804687499818 144.5 A 8 8 0 0 1 8.499980468749982 136.5 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 8.499980468749982 136.5 L 112.49998046874998 136.5 L 112.49998046874998 136.5 L 112.49998046874998 136.5 A 8 8 0 0 1 120.49998046874998 144.5 L 120.49998046874998 248.5 L 120.49998046874998 248.5 L 120.49998046874998 248.5 A 8 8 0 0 1 112.49998046874998 256.5 L 8.499980468749982 256.5 L 8.499980468749982 256.5 L 8.499980468749982 256.5 A 8 8 0 0 1 0.4999804687499818 248.5 L 0.4999804687499818 144.5 L 0.4999804687499818 144.5 L 0.4999804687499818 144.5 A 8 8 0 0 1 8.499980468749982 136.5 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g></g><g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 254.33998046875013 153.57000000000016 L 264.4899804687501 153.57000000000016 L 264.4899804687501 153.57000000000016 L 264.4899804687501 153.57000000000016 A 8 8 0 0 1 272.4899804687501 161.57000000000016 L 272.4899804687501 181.49000000000012 L 272.4899804687501 181.49000000000012 L 272.4899804687501 181.49000000000012 A 8 8 0 0 1 264.4899804687501 189.49000000000012 L 254.33998046875013 189.49000000000012 L 254.33998046875013 189.49000000000012 L 254.33998046875013 189.49000000000012 A 8 8 0 0 1 246.33998046875013 181.49000000000012 L 246.33998046875013 161.57000000000016 L 246.33998046875013 161.57000000000016 L 246.33998046875013 161.57000000000016 A 8 8 0 0 1 254.33998046875013 153.57000000000016 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 254.33998046875013 153.57000000000016 L 264.4899804687501 153.57000000000016 L 264.4899804687501 153.57000000000016 L 264.4899804687501 153.57000000000016 A 8 8 0 0 1 272.4899804687501 161.57000000000016 L 272.4899804687501 181.49000000000012 L 272.4899804687501 181.49000000000012 L 272.4899804687501 181.49000000000012 A 8 8 0 0 1 264.4899804687501 189.49000000000012 L 254.33998046875013 189.49000000000012 L 254.33998046875013 189.49000000000012 L 254.33998046875013 189.49000000000012 A 8 8 0 0 1 246.33998046875013 181.49000000000012 L 246.33998046875013 161.57000000000016 L 246.33998046875013 161.57000000000016 L 246.33998046875013 161.57000000000016 A 8 8 0 0 1 254.33998046875013 153.57000000000016 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g><g><path fill="#000000" stroke="none" paint-order="stroke fill markers" d=" M 152.49998046874998 136.5 L 256.49998046875 136.5 L 256.49998046875 136.5 L 256.49998046875 136.5 A 8 8 0 0 1 264.49998046875 144.5 L 264.49998046875 248.5 L 264.49998046875 248.5 L 264.49998046875 248.5 A 8 8 0 0 1 256.49998046875 256.5 L 152.49998046874998 256.5 L 152.49998046874998 256.5 L 152.49998046874998 256.5 A 8 8 0 0 1 144.49998046874998 248.5 L 144.49998046874998 144.5 L 144.49998046874998 144.5 L 144.49998046874998 144.5 A 8 8 0 0 1 152.49998046874998 136.5 Z"/><path fill="none" stroke="#ffffff" paint-order="fill stroke markers" d=" M 152.49998046874998 136.5 L 256.49998046875 136.5 L 256.49998046875 136.5 L 256.49998046875 136.5 A 8 8 0 0 1 264.49998046875 144.5 L 264.49998046875 248.5 L 264.49998046875 248.5 L 264.49998046875 248.5 A 8 8 0 0 1 256.49998046875 256.5 L 152.49998046874998 256.5 L 152.49998046874998 256.5 L 152.49998046874998 256.5 A 8 8 0 0 1 144.49998046874998 248.5 L 144.49998046874998 144.5 L 144.49998046874998 144.5 L 144.49998046874998 144.5 A 8 8 0 0 1 152.49998046874998 136.5 Z" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/></g></g></g></g></g></svg>

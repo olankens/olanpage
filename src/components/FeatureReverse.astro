@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  header1: string;
+  header2: string;
+  content: string;
+  picture: ImageMetadata;
+}
+
+const { header1, header2, content, picture } = Astro.props;
+---
+
+<section
+  class="w-full bg-linear-to-l from-zinc-800 to-zinc-800/90 text-center text-white sm:text-left"
+>
+  <div class="mx-auto grid max-w-4xl grid-cols-1 gap-12 p-12 sm:grid-cols-2">
+    <!-- Title: Col 2 on Desktop -->
+    <div class="flex flex-col gap-2 sm:col-start-2">
+      <h1 class="text-3xl font-bold uppercase">{header1}</h1>
+      <h2 class="text-xl font-light uppercase">{header2}</h2>
+    </div>
+
+    <!-- Image: Col 1, Row span 2 on Desktop -->
+    <div class="sm:col-start-1 sm:row-span-2 sm:row-start-1">
+      <Image src={picture} alt={header1} class="h-full w-full rounded-lg object-contain" />
+    </div>
+
+    <!-- Content Div: Col 2, Row 2 on Desktop -->
+    <div
+      class="self-end justify-self-end rounded-lg text-lg leading-relaxed sm:col-start-2 sm:row-start-2 md:leading-loose"
+    >
+      {content}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import Avatar from '../assets/avatar.svg';
+import Erd from '../assets/erd.png';
+import Feature from '../components/Feature.astro';
+import FeatureReverse from '../components/FeatureReverse.astro';
+import Mobile from '../assets/mobile.svg';
+import Website from '../assets/website.svg';
+---
+
+<html lang="en" class="overflow-y-auto overscroll-none">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jolan Gerkens | Homepage</title>
+  </head>
+  <body class="flex min-h-dvh flex-col divide-y-2 divide-zinc-400">
+    <Feature
+      header1="Jolan Gerkens"
+      header2="Software Developer"
+      content="Building robust backend systems, intuitive frontend interfaces, and seamless mobile experiences. Specializing in full-stack development with a focus on scalable architecture and clean code."
+      picture={Avatar}
+    />
+    <FeatureReverse
+      header1="Backend"
+      header2="Behind the scenes"
+      content="Architecting robust server-side systems and APIs with Spring Boot. Specializing in database design, microservices architecture, and scalable infrastructure that delivers reliability and performance at any scale."
+      picture={Erd}
+    />
+    <Feature
+      header1="Frontend"
+      header2="What users see"
+      content="Building engaging digital experiences with Angular through clean code and thoughtful design implementation. Focused on responsive layouts, interactive components, and accessible interfaces that users love to interact with every day."
+      picture={Website}
+    />
+    <FeatureReverse
+      header1="Mobile"
+      header2="Anywhere, anytime"
+      content="Building cross-platform mobile applications that users carry everywhere. Specializing in Flutter development, intuitive touch interfaces, and optimized performance that delivers smooth experiences in your pocket."
+      picture={Mobile}
+    />
+    <!-- <Feature
+      header1="Television"
+      header2="For the living room"
+      content="Developing Android TV applications for the living room experience across smart TVs and streaming platforms. Specializing in 10-foot UI design, remote control navigation, and optimized video playback that transforms how people consume content at home."
+      picture={Television}
+    /> -->
+    <!-- <FeatureReverse
+      header1="Limitless"
+      header2="Unlimited possibilities"
+      content="Breaking through traditional limitations with versatile skills across platforms and technologies. Focused on adaptability, continuous learning, and tackling diverse challenges that require thinking beyond established patterns and comfort zones."
+      picture={Watch}
+    /> -->
+  </body>
+</html>
