@@ -32,6 +32,8 @@ jobs:
       - name: Wait for server
         run: |
           timeout 60 bash -c 'until curl -f http://localhost:4321; do sleep 2; done'
+      - name: Create .assets directory
+        run: mkdir -p .assets
       - name: Create previews
         run: |
           node <<'EOF'
@@ -44,14 +46,14 @@ jobs:
             await page1.setViewportSize({ width: 308 * 1.5, height: 640 * 1.5 });
             await page1.goto('http://localhost:4321');
             await page1.waitForLoadState('networkidle');
-            await page1.screenshot({ path: '308x640.png', fullPage: false });
+            await page1.screenshot({ path: '.assets/308x640.png', fullPage: false });
             await page1.close();
             // Create 956x640 preview
             const page2 = await context.newPage();
             await page2.setViewportSize({ width: 956 * 1.5, height: 640 * 1.5 });
             await page2.goto('http://localhost:4321');
             await page2.waitForLoadState('networkidle');
-            await page2.screenshot({ path: '956x640.png', fullPage: false });
+            await page2.screenshot({ path: '.assets/956x640.png', fullPage: false });
             await page2.close();
             await browser.close();
             console.log('Previews created successfully!');
@@ -62,14 +64,14 @@ jobs:
         with:
           name: previews
           path: |
-            308x640.png
-            956x640.png
+            .assets/308x640.png
+            .assets/956x640.png
           retention-days: 30
       - name: Commit previews (optional)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "olankens@users.noreply.github.com"
           git config --local user.name "olankens"
-          git add -f 308x640.png 956x640.png
+          git add -f .assets/308x640.png .assets/956x640.png
           git diff --staged --quiet || git commit -m "Update website previews"
           git push

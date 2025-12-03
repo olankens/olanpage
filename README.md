@@ -2,13 +2,13 @@
 
 # <samp>OVERVIEW</samp>
 
-Developer portfolio showcasing projects and technical expertise. Built with [Astro](https://astro.build) for lightning-fast performance and [Tailwind CSS](https://tailwindcss.com) for modern and responsive design. The project was initialized with [Hubsetup](https://github.com/olankens/hubsetup) for Astro application.
+Developer portfolio showcasing projects and technical expertise. Built with [Astro](https://astro.build) for lightning-fast performance and [Tailwind](https://tailwindcss.com) for modern and responsive design. The project was initialized with [Hubsetup](https://github.com/olankens/hubsetup) for Astro application.
 
 <hr>
 
 ### Website Previews
 
-<img src="308x640.png" width="24.0625%"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/1x1.png" width="1.25%"><img src="956x640.png" width="74.6875%">
+<img src=".assets/308x640.png" width="24.0625%"><img src=".assets/1x1.gif" width="1.25%"><img src=".assets/956x640.png" width="74.6875%">
 
 <hr>
 
