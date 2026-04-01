@@ -59,7 +59,7 @@ const initialRepo = reposData[0] || {
 
     <!-- Content Div: Col 1, Row 2 on Desktop -->
     <div
-      class="repo-content self-end justify-self-end rounded-lg text-lg leading-relaxed transition-opacity duration-300 sm:col-start-1 sm:row-start-2 md:leading-loose"
+      class="repo-content self-end justify-self-end text-lg leading-relaxed transition-opacity duration-300 sm:col-start-1 sm:row-start-2 md:leading-loose"
     >
       {initialRepo.content}
     </div>
@@ -91,7 +91,7 @@ const initialRepo = reposData[0] || {
         progressEl.style.transition = 'none';
         progressEl.style.width = '0%';
         void progressEl.offsetWidth; // Force layout recalculation
-        progressEl.style.transition = 'width 8000ms linear';
+        progressEl.style.transition = 'width 12000ms linear';
         progressEl.style.width = '100%';
       }
 
@@ -100,7 +100,7 @@ const initialRepo = reposData[0] || {
           progressEl.style.transition = 'none';
           progressEl.style.width = '0%';
           void progressEl.offsetWidth; // Force layout recalculation
-          progressEl.style.transition = 'width 8000ms linear';
+          progressEl.style.transition = 'width 12000ms linear';
           progressEl.style.width = '100%';
         }
 
@@ -128,9 +128,9 @@ const initialRepo = reposData[0] || {
             header2El.style.opacity = '1';
             imageEl.style.opacity = '1';
             contentEl.style.opacity = '1';
-          }, 250); // Wait for fade out to complete based on duration-300
+          }, 250);
         }
-      }, 8000); // 5 seconds
+      }, 12000);
     }
   }
 </script>

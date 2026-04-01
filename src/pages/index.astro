@@ -4,10 +4,12 @@ import Feature from '../components/Feature.astro';
 import FeatureReverse from '../components/FeatureReverse.astro';
 import WorkFeature from '../components/WorkFeature.astro';
 
-import AvatarProfile from '../assets/avatar.png';
-import Backend from '../assets/backend.png';
-import Frontend from '../assets/frontend.png';
-import Mobile from '../assets/mobile.png';
+import Avatar from '../assets/avatar.png';
+import Backend from '../assets/erd.png';
+import Frontend from '../assets/website.svg';
+import Mobile from '../assets/mobile.svg';
+import Television from '../assets/television.svg';
+import Watch from '../assets/watch.svg';
 ---
 
 <html lang="en" class="overflow-y-auto overscroll-none">
@@ -23,7 +25,7 @@ import Mobile from '../assets/mobile.png';
       header1="Jolan Gerkens"
       header2="Software Developer"
       content="Building robust backend systems, intuitive frontend interfaces, and seamless mobile experiences. Specializing in full-stack development with a focus on scalable architecture and clean code."
-      picture={AvatarProfile}
+      picture={Avatar}
     />
     <WorkFeature />
     <FeatureReverse
@@ -44,17 +46,17 @@ import Mobile from '../assets/mobile.png';
       content="Building cross-platform mobile applications that users carry everywhere. Specializing in Flutter development, intuitive touch interfaces, and optimized performance that delivers smooth experiences in your pocket."
       picture={Mobile}
     />
-    <!-- <Feature
+    <Feature
       header1="Television"
       header2="For the living room"
       content="Developing Android TV applications for the living room experience across smart TVs and streaming platforms. Specializing in 10-foot UI design, remote control navigation, and optimized video playback that transforms how people consume content at home."
       picture={Television}
-    /> -->
-    <!-- <FeatureReverse
+    />
+    <FeatureReverse
       header1="Limitless"
       header2="Unlimited possibilities"
       content="Breaking through traditional limitations with versatile skills across platforms and technologies. Focused on adaptability, continuous learning, and tackling diverse challenges that require thinking beyond established patterns and comfort zones."
       picture={Watch}
-    /> -->
+    />
   </body>
 </html>

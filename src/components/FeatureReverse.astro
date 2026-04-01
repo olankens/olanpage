@@ -25,16 +25,12 @@ const { header1, header2, content, picture } = Astro.props;
 
     <!-- Image: Col 1, Row span 2 on Desktop -->
     <div class="flex items-center justify-center sm:col-start-1 sm:row-span-2 sm:row-start-1">
-      <Image
-        src={picture}
-        alt={header1}
-        class="aspect-square h-auto w-full transform rounded-lg border-3 border-white bg-linear-to-b from-black to-transparent object-cover"
-      />
+      <Image src={picture} alt={header1} class="aspect-square h-auto w-full object-contain" />
     </div>
 
     <!-- Content Div: Col 2, Row 2 on Desktop -->
     <div
-      class="self-end justify-self-end rounded-lg text-lg leading-relaxed sm:col-start-2 sm:row-start-2 md:leading-loose"
+      class="self-end justify-self-end text-lg leading-relaxed sm:col-start-2 sm:row-start-2 md:leading-loose"
     >
       {content}
     </div>
