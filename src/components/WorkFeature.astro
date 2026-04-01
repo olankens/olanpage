@@ -1,44 +1,136 @@
 ---
 const response = await globalThis.fetch(
-  'https://api.github.com/users/olankens/repos?sort=updated&direction=desc&per_page=1'
+  'https://api.github.com/users/olankens/repos?sort=updated&direction=desc&per_page=4'
 );
 const repos = await response.json();
-const repo = repos[0];
 
-const header1 = repo?.name || 'WORK';
-const header2 = repo?.language || 'RECENT COMMITS';
+const reposData = repos.map((repo: any) => ({
+  header1: repo?.name || 'WORK',
+  header2: repo?.language || 'RECENT COMMITS',
+  content: repo?.description || 'Check out my latest GitHub repository!',
+  pictureUrl: `https://raw.githubusercontent.com/${repo?.full_name}/main/.assets/social.png`,
+  url: repo?.html_url || `https://github.com/${repo?.full_name}`,
+}));
 
-const content = repo?.description || 'Check out my latest GitHub repository!';
-const pictureUrl = `https://raw.githubusercontent.com/${repo?.full_name}/main/.assets/social.png`;
+const initialRepo = reposData[0] || {
+  header1: 'WORK',
+  header2: 'RECENT COMMITS',
+  content: 'Check out my latest GitHub repository!',
+  pictureUrl: '',
+  url: '#',
+};
 ---
 
 <section
+  id="work-feature"
   class="w-full bg-linear-to-r from-violet-800 to-violet-800/90 text-center text-white sm:text-left"
 >
   <div class="mx-auto grid max-w-4xl grid-cols-1 gap-12 p-12 sm:grid-cols-2">
     <!-- Title: Col 1 on Desktop -->
     <div class="flex flex-col gap-2 sm:col-start-1">
-      <h1 class="text-3xl font-bold uppercase">{header1}</h1>
-      <h2 class="text-xl font-light uppercase">{header2}</h2>
-      <hr class="mt-10 w-full border-2 border-white" />
+      <h1 class="repo-header1 text-3xl font-bold uppercase transition-opacity duration-300">
+        {initialRepo.header1}
+      </h1>
+      <h2 class="repo-header2 text-xl font-light uppercase transition-opacity duration-300">
+        {initialRepo.header2}
+      </h2>
+      <div class="mt-10 h-[4px] w-full overflow-hidden bg-white/30">
+        <div class="repo-progress h-full w-0 bg-white" style="transition: width 0ms"></div>
+      </div>
     </div>
 
     <!-- Image: Col 2, Row span 2 on Desktop -->
     <div class="flex items-center justify-center sm:col-start-2 sm:row-span-2">
-      <img
-        src={pictureUrl}
-        alt={header1}
-        width="274"
-        height="258"
-        class="aspect-square h-auto w-full rounded-lg border-3 border-white object-cover"
-      />
+      <a
+        href={initialRepo.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="repo-link block w-full"
+      >
+        <img
+          class="repo-image aspect-square h-auto w-full rounded-lg border-3 border-white object-cover transition-opacity duration-300"
+          src={initialRepo.pictureUrl}
+          alt={initialRepo.header1}
+          width="274"
+          height="258"
+        />
+      </a>
     </div>
 
     <!-- Content Div: Col 1, Row 2 on Desktop -->
     <div
-      class="self-end justify-self-end rounded-lg text-lg leading-relaxed sm:col-start-1 sm:row-start-2 md:leading-loose"
+      class="repo-content self-end justify-self-end rounded-lg text-lg leading-relaxed transition-opacity duration-300 sm:col-start-1 sm:row-start-2 md:leading-loose"
     >
-      {content}
+      {initialRepo.content}
     </div>
   </div>
 </section>
+
+<script define:vars={{ reposData }}>
+  if (reposData && reposData.length > 1) {
+    // Prefetch all images so they appear smoothly without network delay
+    reposData.forEach((repo) => {
+      if (repo.pictureUrl) {
+        const prefetchImg = new Image();
+        prefetchImg.src = repo.pictureUrl;
+      }
+    });
+
+    let currentIndex = 0;
+    const section = document.getElementById('work-feature');
+
+    if (section) {
+      const header1El = section.querySelector('.repo-header1');
+      const header2El = section.querySelector('.repo-header2');
+      const imageEl = section.querySelector('.repo-image');
+      const linkEl = section.querySelector('.repo-link');
+      const contentEl = section.querySelector('.repo-content');
+      const progressEl = section.querySelector('.repo-progress');
+
+      if (progressEl) {
+        progressEl.style.transition = 'none';
+        progressEl.style.width = '0%';
+        void progressEl.offsetWidth; // Force layout recalculation
+        progressEl.style.transition = 'width 8000ms linear';
+        progressEl.style.width = '100%';
+      }
+
+      setInterval(() => {
+        if (progressEl) {
+          progressEl.style.transition = 'none';
+          progressEl.style.width = '0%';
+          void progressEl.offsetWidth; // Force layout recalculation
+          progressEl.style.transition = 'width 8000ms linear';
+          progressEl.style.width = '100%';
+        }
+
+        currentIndex = (currentIndex + 1) % reposData.length;
+        const repo = reposData[currentIndex];
+
+        if (header1El && header2El && imageEl && contentEl) {
+          // Fade out
+          header1El.style.opacity = '0';
+          header2El.style.opacity = '0';
+          imageEl.style.opacity = '0';
+          contentEl.style.opacity = '0';
+
+          setTimeout(() => {
+            // Update content
+            header1El.textContent = repo.header1;
+            header2El.textContent = repo.header2;
+            imageEl.src = repo.pictureUrl;
+            imageEl.alt = repo.header1;
+            if (linkEl) linkEl.href = repo.url;
+            contentEl.textContent = repo.content;
+
+            // Fade in
+            header1El.style.opacity = '1';
+            header2El.style.opacity = '1';
+            imageEl.style.opacity = '1';
+            contentEl.style.opacity = '1';
+          }, 250); // Wait for fade out to complete based on duration-300
+        }
+      }, 8000); // 5 seconds
+    }
+  }
+</script>
