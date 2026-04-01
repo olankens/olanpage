@@ -1,6 +1,6 @@
 ---
 const response = await globalThis.fetch(
-  'https://api.github.com/users/olankens/repos?sort=created&direction=desc&per_page=1'
+  'https://api.github.com/users/olankens/repos?sort=updated&direction=desc&per_page=1'
 );
 const repos = await response.json();
 const repo = repos[0];
