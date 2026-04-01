@@ -1,15 +1,15 @@
 ---
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+const response = await globalThis.fetch(
+  'https://api.github.com/users/olankens/repos?sort=created&direction=desc&per_page=1'
+);
+const repos = await response.json();
+const repo = repos[0];
 
-interface Props {
-  header1: string;
-  header2: string;
-  content: string;
-  picture: ImageMetadata;
-}
+const header1 = repo?.name || 'WORK';
+const header2 = repo?.language || 'RECENT COMMITS';
 
-const { header1, header2, content, picture } = Astro.props;
+const content = repo?.description || 'Check out my latest GitHub repository!';
+const pictureUrl = `https://raw.githubusercontent.com/${repo?.full_name}/main/.assets/social.png`;
 ---
 
 <section
@@ -24,10 +24,12 @@ const { header1, header2, content, picture } = Astro.props;
 
     <!-- Image: Col 2, Row span 2 on Desktop -->
     <div class="flex items-center justify-center sm:col-start-2 sm:row-span-2">
-      <Image
-        src={picture}
+      <img
+        src={pictureUrl}
         alt={header1}
-        class="aspect-square h-auto w-full scale-x-[-1] transform rounded-lg border-3 border-white bg-linear-to-b from-black to-transparent object-cover"
+        width="274"
+        height="258"
+        class="aspect-square h-auto w-full rounded-lg border-3 border-white object-cover"
       />
     </div>
 

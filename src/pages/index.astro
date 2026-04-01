@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
-import Avatar from '../assets/avatar.svg';
-import Erd from '../assets/erd.png';
 import Feature from '../components/Feature.astro';
 import FeatureReverse from '../components/FeatureReverse.astro';
-import Mobile from '../assets/mobile.svg';
-import Website from '../assets/website.svg';
+import WorkFeature from '../components/WorkFeature.astro';
+
+import AvatarProfile from '../assets/avatar.png';
+import Backend from '../assets/backend.png';
+import Frontend from '../assets/frontend.png';
+import Mobile from '../assets/mobile.png';
 ---
 
 <html lang="en" class="overflow-y-auto overscroll-none">
@@ -16,31 +18,37 @@ import Website from '../assets/website.svg';
     <meta name="generator" content={Astro.generator} />
     <title>Jolan Gerkens | Homepage</title>
   </head>
-  <body class="flex min-h-dvh flex-col divide-y-2 divide-zinc-400">
+  <body class="flex min-h-dvh flex-col divide-y-3 divide-white">
     <Feature
       header1="Jolan Gerkens"
       header2="Software Developer"
       content="Building robust backend systems, intuitive frontend interfaces, and seamless mobile experiences. Specializing in full-stack development with a focus on scalable architecture and clean code."
-      picture={Avatar}
+      picture={AvatarProfile}
     />
     <FeatureReverse
       header1="Backend"
       header2="Behind the scenes"
       content="Architecting robust server-side systems and APIs with Spring Boot. Specializing in database design, microservices architecture, and scalable infrastructure that delivers reliability and performance at any scale."
-      picture={Erd}
+      picture={Backend}
     />
     <Feature
       header1="Frontend"
       header2="What users see"
       content="Building engaging digital experiences with Angular through clean code and thoughtful design implementation. Focused on responsive layouts, interactive components, and accessible interfaces that users love to interact with every day."
-      picture={Website}
+      picture={Frontend}
     />
-    <!-- <FeatureReverse
+    <FeatureReverse
       header1="Mobile"
       header2="Anywhere, anytime"
       content="Building cross-platform mobile applications that users carry everywhere. Specializing in Flutter development, intuitive touch interfaces, and optimized performance that delivers smooth experiences in your pocket."
       picture={Mobile}
+    />
+    <!-- <ProjectFeature
+      header1="Projects"
+      header2="My recent work"
+      content="A collection of my proudest work, demonstrating my skills and passion for software development."
     /> -->
+    <WorkFeature />
     <!-- <Feature
       header1="Television"
       header2="For the living room"
