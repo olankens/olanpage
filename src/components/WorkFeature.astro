@@ -64,38 +64,27 @@ const initialRepo = reposData[0] || {
       {initialRepo.content}
     </div>
   </div>
-</section>
+  <script define:vars={{ reposData }}>
+    if (reposData && reposData.length > 1) {
+      // Prefetch all images so they appear smoothly without network delay
+      reposData.forEach((repo) => {
+        if (repo.pictureUrl) {
+          const prefetchImg = new Image();
+          prefetchImg.src = repo.pictureUrl;
+        }
+      });
 
-<script define:vars={{ reposData }}>
-  if (reposData && reposData.length > 1) {
-    // Prefetch all images so they appear smoothly without network delay
-    reposData.forEach((repo) => {
-      if (repo.pictureUrl) {
-        const prefetchImg = new Image();
-        prefetchImg.src = repo.pictureUrl;
-      }
-    });
+      let currentIndex = 0;
+      const section = document.getElementById('work-feature');
 
-    let currentIndex = 0;
-    const section = document.getElementById('work-feature');
+      if (section) {
+        const header1El = section.querySelector('.repo-header1');
+        const header2El = section.querySelector('.repo-header2');
+        const imageEl = section.querySelector('.repo-image');
+        const linkEl = section.querySelector('.repo-link');
+        const contentEl = section.querySelector('.repo-content');
+        const progressEl = section.querySelector('.repo-progress');
 
-    if (section) {
-      const header1El = section.querySelector('.repo-header1');
-      const header2El = section.querySelector('.repo-header2');
-      const imageEl = section.querySelector('.repo-image');
-      const linkEl = section.querySelector('.repo-link');
-      const contentEl = section.querySelector('.repo-content');
-      const progressEl = section.querySelector('.repo-progress');
-
-      if (progressEl) {
-        progressEl.style.transition = 'none';
-        progressEl.style.width = '0%';
-        void progressEl.offsetWidth; // Force layout recalculation
-        progressEl.style.transition = 'width 12000ms linear';
-        progressEl.style.width = '100%';
-      }
-
-      setInterval(() => {
         if (progressEl) {
           progressEl.style.transition = 'none';
           progressEl.style.width = '0%';
@@ -104,33 +93,43 @@ const initialRepo = reposData[0] || {
           progressEl.style.width = '100%';
         }
 
-        currentIndex = (currentIndex + 1) % reposData.length;
-        const repo = reposData[currentIndex];
+        setInterval(() => {
+          if (progressEl) {
+            progressEl.style.transition = 'none';
+            progressEl.style.width = '0%';
+            void progressEl.offsetWidth; // Force layout recalculation
+            progressEl.style.transition = 'width 12000ms linear';
+            progressEl.style.width = '100%';
+          }
 
-        if (header1El && header2El && imageEl && contentEl) {
-          // Fade out
-          header1El.style.opacity = '0';
-          header2El.style.opacity = '0';
-          imageEl.style.opacity = '0';
-          contentEl.style.opacity = '0';
+          currentIndex = (currentIndex + 1) % reposData.length;
+          const repo = reposData[currentIndex];
 
-          setTimeout(() => {
-            // Update content
-            header1El.textContent = repo.header1;
-            header2El.textContent = repo.header2;
-            imageEl.src = repo.pictureUrl;
-            imageEl.alt = repo.header1;
-            if (linkEl) linkEl.href = repo.url;
-            contentEl.textContent = repo.content;
+          if (header1El && header2El && imageEl && contentEl) {
+            // Fade out
+            header1El.style.opacity = '0';
+            header2El.style.opacity = '0';
+            imageEl.style.opacity = '0';
+            contentEl.style.opacity = '0';
 
-            // Fade in
-            header1El.style.opacity = '1';
-            header2El.style.opacity = '1';
-            imageEl.style.opacity = '1';
-            contentEl.style.opacity = '1';
-          }, 250);
-        }
-      }, 12000);
+            setTimeout(() => {
+              // Update content
+              header1El.textContent = repo.header1;
+              header2El.textContent = repo.header2;
+              imageEl.src = repo.pictureUrl;
+              imageEl.alt = repo.header1;
+              if (linkEl) linkEl.href = repo.url;
+              contentEl.textContent = repo.content;
+
+              // Fade in
+              header1El.style.opacity = '1';
+              header2El.style.opacity = '1';
+              imageEl.style.opacity = '1';
+              contentEl.style.opacity = '1';
+            }, 250);
+          }
+        }, 12000);
+      }
     }
-  }
-</script>
+  </script>
+</section>
