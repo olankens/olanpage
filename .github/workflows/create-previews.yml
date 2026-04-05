@@ -43,7 +43,7 @@ jobs:
             const context = await browser.newContext();
             // Create desktop previews
             let page = await context.newPage();
-            await page.setViewportSize({ width: 632 * 2, height: 640 * 2 });
+            await page.setViewportSize({ width: 632 * 1.5, height: 640 * 1.5 });
             await page.goto('http://localhost:4321');
             await page.waitForLoadState('networkidle');
             await page.screenshot({ path: '.assets/desktop1.png', fullPage: false });
