@@ -55,6 +55,41 @@ jobs:
             await page2.waitForLoadState('networkidle');
             await page2.screenshot({ path: '.assets/956x640.png', fullPage: false });
             await page2.close();
+            // Create desktop1 (632x640)
+            const page3 = await context.newPage();
+            await page3.setViewportSize({ width: 632 * 1.5, height: 640 * 1.5 });
+            await page3.goto('http://localhost:4321');
+            await page3.waitForLoadState('networkidle');
+            await page3.screenshot({ path: '.assets/desktop1.png', fullPage: false });
+            await page3.close();
+            // Create desktop2 (632x640 scrolled down)
+            const page4 = await context.newPage();
+            await page4.setViewportSize({ width: 632 * 1.5, height: 640 * 1.5 });
+            await page4.goto('http://localhost:4321');
+            await page4.waitForLoadState('networkidle');
+            await page4.evaluate(() => window.scrollBy(0, window.innerHeight));
+            await page4.waitForTimeout(1000);
+            await page4.screenshot({ path: '.assets/desktop2.png', fullPage: false });
+            await page4.close();
+            // Create mobile1 (308x640 at top)
+            const page5 = await context.newPage();
+            await page5.setViewportSize({ width: 308 * 1.5, height: 640 * 1.5 });
+            await page5.goto('http://localhost:4321');
+            await page5.waitForLoadState('networkidle');
+            await page5.screenshot({ path: '.assets/mobile1.png', fullPage: false });
+            // Create mobile2 (308x640 at 25%)
+            await page5.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.25));
+            await page5.waitForTimeout(500);
+            await page5.screenshot({ path: '.assets/mobile2.png', fullPage: false });
+            // Create mobile3 (308x640 at 50%)
+            await page5.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.50));
+            await page5.waitForTimeout(500);
+            await page5.screenshot({ path: '.assets/mobile3.png', fullPage: false });
+            // Create mobile4 (308x640 at 75%)
+            await page5.evaluate(() => window.scrollTo(0, document.body.scrollHeight * 0.75));
+            await page5.waitForTimeout(500);
+            await page5.screenshot({ path: '.assets/mobile4.png', fullPage: false });
+            await page5.close();
             await browser.close();
             console.log('Previews created successfully!');
           })();
@@ -66,12 +101,18 @@ jobs:
           path: |
             .assets/308x640.png
             .assets/956x640.png
+            .assets/desktop1.png
+            .assets/desktop2.png
+            .assets/mobile1.png
+            .assets/mobile2.png
+            .assets/mobile3.png
+            .assets/mobile4.png
           retention-days: 30
       - name: Commit previews (optional)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config --local user.email "olankens@users.noreply.github.com"
           git config --local user.name "olankens"
-          git add -f .assets/308x640.png .assets/956x640.png
+          git add -f .assets/308x640.png .assets/956x640.png .assets/desktop1.png .assets/desktop2.png .assets/mobile1.png .assets/mobile2.png .assets/mobile3.png .assets/mobile4.png
           git diff --staged --quiet || git commit -m "Update website previews"
           git push
