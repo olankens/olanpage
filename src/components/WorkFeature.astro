@@ -3,8 +3,9 @@ const response = await globalThis.fetch(
   'https://api.github.com/users/olankens/repos?sort=updated&direction=desc&per_page=6'
 );
 const repos = await response.json();
+const filteredRepos = repos.filter((repo: any) => repo?.name !== 'olanpage');
 
-const reposData = repos.map((repo: any) => ({
+const reposData = filteredRepos.slice(0, 6).map((repo: any) => ({
   header1: repo?.name || 'WORK',
   header2: repo?.language || 'RECENT COMMITS',
   content: repo?.description || 'Check out my latest GitHub repository!',
@@ -34,7 +35,7 @@ const initialRepo = reposData[0] || {
       <h2 class="repo-header2 text-xl font-light uppercase transition-opacity duration-300">
         {initialRepo.header2}
       </h2>
-      <div class="mt-10 h-[4px] w-full overflow-hidden bg-white/30">
+      <div class="mt-10 h-1 w-full overflow-hidden bg-white/30">
         <div class="repo-progress h-full w-0 bg-white" style="transition: width 0ms"></div>
       </div>
     </div>
