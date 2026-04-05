@@ -43,7 +43,7 @@ jobs:
             const context = await browser.newContext();
             // Create desktop previews
             let page = await context.newPage();
-            await page.setViewportSize({ width: 632 * 1.5, height: 640 * 1.5 });
+            await page.setViewportSize({ width: 632 * 2, height: 640 * 2 });
             await page.goto('http://localhost:4321');
             await page.waitForLoadState('networkidle');
             await page.screenshot({ path: '.assets/desktop1.png', fullPage: false });
@@ -57,7 +57,7 @@ jobs:
             await page.close();
             // Create mobile previews
             page = await context.newPage();
-            await page.setViewportSize({ width: 308 * 1.5, height: 640 * 1.5 });
+            await page.setViewportSize({ width: 308 * 2, height: 640 * 2 });
             await page.goto('http://localhost:4321');
             await page.waitForLoadState('networkidle');
             const scrollToSection = async (index) => {
@@ -97,6 +97,6 @@ jobs:
         run: |
           git config --local user.email "olankens@users.noreply.github.com"
           git config --local user.name "olankens"
-          git add -f .assets/308x640.png .assets/956x640.png .assets/desktop1.png .assets/desktop2.png .assets/mobile1.png .assets/mobile2.png .assets/mobile3.png .assets/mobile4.png
+          git add -f .assets/desktop1.png .assets/desktop2.png .assets/mobile1.png .assets/mobile2.png .assets/mobile3.png .assets/mobile4.png
           git diff --staged --quiet || git commit -m "Update website previews"
           git push
