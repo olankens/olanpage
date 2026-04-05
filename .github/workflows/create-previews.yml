@@ -1,7 +1,7 @@
 name: Create Previews
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 permissions:
   contents: write
@@ -48,8 +48,10 @@ jobs:
             await page.waitForLoadState('networkidle');
             await page.screenshot({ path: '.assets/desktop1.png', fullPage: false });
             // await page.evaluate(() => window.scrollBy(0, document.body.scrollHeight));
-            let section = document.querySelector(`body > section:nth-of-type(4)`);
-            section.scrollIntoView({ block: 'start', behavior: 'instant' });
+            await page.evaluate(() => {
+              const section = document.querySelector(`body > section:nth-of-type(4)`);
+              if (section) section.scrollIntoView({ block: 'start', behavior: 'instant' });
+            });
             await page.waitForTimeout(1000);
             await page.screenshot({ path: '.assets/desktop2.png', fullPage: false });
             await page.close();
@@ -60,10 +62,8 @@ jobs:
             await page.waitForLoadState('networkidle');
             const scrollToSection = async (index) => {
               await page.evaluate((sectionIndex) => {
-                section = document.querySelector(`body > section:nth-of-type(${sectionIndex})`);
-                if (section) {
-                  section.scrollIntoView({ block: 'start', behavior: 'instant' });
-                }
+                const section = document.querySelector(`body > section:nth-of-type(${sectionIndex})`);
+                if (section) section.scrollIntoView({ block: 'start', behavior: 'instant' });
               }, index);
               await page.waitForTimeout(500);
             };
