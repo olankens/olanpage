@@ -54,7 +54,7 @@ jobs:
             await page.screenshot({ path: '.assets/desktop2.png', fullPage: false });
             await page.close();
             // Create mobile previews
-            const page = await context.newPage();
+            page = await context.newPage();
             await page.setViewportSize({ width: 308 * 1.5, height: 640 * 1.5 });
             await page.goto('http://localhost:4321');
             await page.waitForLoadState('networkidle');
