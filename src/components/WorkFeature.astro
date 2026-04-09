@@ -3,7 +3,8 @@ const response = await globalThis.fetch(
   'https://api.github.com/users/olankens/repos?sort=updated&direction=desc&per_page=8'
 );
 const repos = await response.json();
-const filteredRepos = repos.filter((repo: any) => !['olanpage', 'olankens'].includes(repo?.name));
+const excludedLanguages = ['Markdown', 'Astro'];
+const filteredRepos = repos.filter((repo: any) => !excludedLanguages.includes(repo?.language));
 
 const reposData = filteredRepos.slice(0, 6).map((repo: any) => ({
   header1: repo?.name || 'WORK',
