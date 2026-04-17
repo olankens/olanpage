@@ -18,7 +18,7 @@ const { header1, header2, content, picture } = Astro.props;
   <div class="mx-auto grid max-w-4xl grid-cols-1 gap-12 p-12 sm:grid-cols-2">
     <!-- Title: Col 2 on Desktop -->
     <div class="flex flex-col gap-2 sm:col-start-2">
-      <h1 class="mt-[-8px] text-4xl font-bold uppercase">{header1}</h1>
+      <h1 class="text-4xl font-bold uppercase md:mt-[-8px]">{header1}</h1>
       <h2 class="text-2xl font-light uppercase">{header2}</h2>
       <hr class="mt-10 w-full border-2 border-white" />
     </div>
@@ -30,7 +30,7 @@ const { header1, header2, content, picture } = Astro.props;
 
     <!-- Content Div: Col 2, Row 2 on Desktop -->
     <div
-      class="mb-[-8px] self-end justify-self-end text-lg sm:col-start-2 sm:row-start-2 md:leading-loose"
+      class="self-end justify-self-end text-lg sm:col-start-2 sm:row-start-2 md:mb-[-8px] md:leading-loose"
     >
       {content}
     </div>
