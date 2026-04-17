@@ -49,7 +49,7 @@ jobs:
             await page.screenshot({ path: '.assets/desktop1.png', fullPage: false });
             // await page.evaluate(() => window.scrollBy(0, document.body.scrollHeight));
             await page.evaluate(() => {
-              const section = document.querySelector(`body > section:nth-of-type(4)`);
+              const section = document.querySelector(`body > section:nth-of-type(3)`);
               if (section) section.scrollIntoView({ block: 'start', behavior: 'instant' });
             });
             await page.waitForTimeout(1000);
