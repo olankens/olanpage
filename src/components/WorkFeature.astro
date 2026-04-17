@@ -1,6 +1,6 @@
 ---
 const response = await globalThis.fetch(
-  'https://api.github.com/users/olankens/repos?sort=updated&direction=desc&per_page=8'
+  'https://api.github.com/users/olankens/repos?sort=updated&direction=desc&per_page=16'
 );
 const repos = await response.json();
 const excludedLanguages = ['Markdown', 'Astro'];
@@ -10,7 +10,8 @@ const reposData = filteredRepos.slice(0, 6).map((repo: any) => ({
   header1: repo?.name || 'WORK',
   header2: repo?.language || 'RECENT COMMITS',
   content: repo?.description || 'Check out my latest GitHub repository!',
-  pictureUrl: `https://raw.githubusercontent.com/${repo?.full_name}/main/.assets/social.png`,
+  // pictureUrl: `https://raw.githubusercontent.com/${repo?.full_name}/main/.assets/social.png`,
+  pictureUrl: `https://raw.githubusercontent.com/${repo?.full_name}/main/.assets/icon.svg`,
   url: repo?.html_url || `https://github.com/${repo?.full_name}`,
 }));
 
@@ -38,7 +39,7 @@ const initialRepo = reposData[0] || {
       <h2 class="repo-header2 text-2xl font-light uppercase transition-opacity duration-300">
         {initialRepo.header2}
       </h2>
-      <div class="mt-10 h-1 w-full overflow-hidden bg-white/30">
+      <div class="mt-10 mb-2 h-1 w-full overflow-hidden bg-white/30">
         <div class="repo-progress h-full w-0 bg-white" style="transition: width 0ms"></div>
       </div>
     </div>
@@ -65,7 +66,10 @@ const initialRepo = reposData[0] || {
     <div
       class="repo-content self-end justify-self-end text-lg leading-relaxed transition-opacity duration-300 sm:col-start-1 sm:row-start-2 md:mb-[-8px] md:leading-loose"
     >
-      {initialRepo.content}
+      <!-- {initialRepo.content} -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget elit sit amet nibh interdum
+      blandit id id lacus. Etiam malesuada fringilla dui et commodo. Orci varius natoque penatibus et
+      magnis dis parturient montes.
     </div>
   </div>
   <script define:vars={{ reposData }}>
@@ -123,7 +127,7 @@ const initialRepo = reposData[0] || {
               imageEl.src = repo.pictureUrl;
               imageEl.alt = repo.header1;
               if (linkEl) linkEl.href = repo.url;
-              contentEl.textContent = repo.content;
+              // contentEl.textContent = repo.content;
 
               // Fade in
               header1El.style.opacity = '1';
