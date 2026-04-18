@@ -67,10 +67,10 @@ const initialRepo = reposData[0] || {
       class="repo-content self-end justify-self-end text-lg leading-relaxed transition-opacity duration-300 sm:col-start-1 sm:row-start-2 md:mb-[-8px] md:leading-loose"
     >
       <p class="sm:line-clamp-3 md:line-clamp-4 lg:line-clamp-none">
-        <!-- {initialRepo.content} -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget elit sit amet nibh interdum
-        blandit id id lacus. Etiam malesuada fringilla dui et commodo. Orci varius natoque penatibus et
-        magnis dis parturient montes.
+         {initialRepo.content}
+        <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget elit sit amet nibh interdum-->
+        <!--blandit id id lacus. Etiam malesuada fringilla dui et commodo. Orci varius natoque penatibus et-->
+        <!--magnis dis parturient montes.-->
       </p>
     </div>
   </div>
@@ -129,7 +129,7 @@ const initialRepo = reposData[0] || {
               imageEl.src = repo.pictureUrl;
               imageEl.alt = repo.header1;
               if (linkEl) linkEl.href = repo.url;
-              // contentEl.textContent = repo.content;
+              contentEl.textContent = repo.content;
 
               // Fade in
               header1El.style.opacity = '1';
