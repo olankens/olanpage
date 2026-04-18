@@ -32,7 +32,9 @@ const { header1, header2, content, picture } = Astro.props;
     <div
       class="self-end justify-self-end text-lg leading-relaxed sm:col-start-2 sm:row-start-2 md:mb-[-8px] md:leading-loose"
     >
-      {content}
+      <p class="sm:line-clamp-3 md:line-clamp-4 lg:line-clamp-none">
+        {content}
+      </p>
     </div>
   </div>
 </section>
