@@ -43,13 +43,13 @@ jobs:
             const context = await browser.newContext();
             // Create desktop previews
             let page = await context.newPage();
-            await page.setViewportSize({ width: 632 * 2.5, height: 640 * 2.5 });
+            await page.setViewportSize({ width: 632 * 2, height: 640 * 2 });
             await page.goto('http://localhost:4321');
             await page.waitForLoadState('networkidle');
             await page.screenshot({ path: '.assets/desktop1.png', fullPage: false });
             // await page.evaluate(() => window.scrollBy(0, document.body.scrollHeight));
             await page.evaluate(() => {
-              const section = document.querySelector(`body > section:nth-of-type(4)`);
+              const section = document.querySelector(`body > section:nth-of-type(2)`);
               if (section) section.scrollIntoView({ block: 'start', behavior: 'instant' });
             });
             await page.waitForTimeout(1000);
