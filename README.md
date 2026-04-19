@@ -1,15 +1,12 @@
 <hr>
 
 <div align="center">
-<img src=".assets/icon.svg" width="128" alt="icon"/>
-<h1>OLANPAGE</h1>
+  <img src=".assets/icon.svg" width="128" alt="icon"/>
+  <h1>OLANPAGE</h1>
+  <p><a href="https://olankens.com">Website</a></p>
+  <hr>
+  <p>Developer portfolio showcasing projects and technical skills. Powered by Astro for fast performance and styled with Tailwind CSS for a modern, fully responsive design that works seamlessly across all devices.</p>
 </div>
-
-<p align="center"><a href="https://olankens.com">Website</a>
-
-<hr>
-
-<p align="center">Developer portfolio showcasing projects and technical expertise. Built with <a href="https://astro.build">Astro</a> for fast performance and <a href="https://tailwindcss.com">Tailwind CSS</a> for a modern, responsive design. Initialized with <a href="https://github.com/olankens/hubsetup">Hubsetup</a> to streamline development and improve the Astro application workflow.</p>
 
 <hr>
 
