@@ -32,7 +32,7 @@ const initialRepo = reposData[0] || {
     <!-- Title: Col 1 on Desktop -->
     <div class="flex flex-col gap-2 sm:col-start-1">
       <h1
-        class="repo-header1 text-4xl font-bold uppercase transition-opacity duration-300 md:mt-[-8px]"
+        class="repo-header1 text-4xl font-bold uppercase transition-opacity duration-300 md:-mt-2"
       >
         {initialRepo.header1}
       </h1>
@@ -64,7 +64,7 @@ const initialRepo = reposData[0] || {
 
     <!-- Content Div: Col 1, Row 2 on Desktop -->
     <div
-      class="repo-content self-end justify-self-end text-lg leading-relaxed transition-opacity duration-300 sm:col-start-1 sm:row-start-2 md:mb-[-8px] md:leading-loose"
+      class="repo-content self-end justify-self-end text-lg leading-relaxed transition-opacity duration-300 sm:col-start-1 sm:row-start-2 md:-mb-2 md:leading-loose"
     >
       <p class="sm:line-clamp-3 md:line-clamp-4 lg:line-clamp-none">
          {initialRepo.content}
