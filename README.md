@@ -2,7 +2,7 @@
 
 <div align="center">
   <p><img src=".assets/icon.svg" width="128"/></p>
-  <sub>FRONTEND</sub>
+  <sub>BRANDING</sub>
   <h1>OLANPAGE</h1>
   <p><a href="https://olankens.com">Website</a></p><hr>
   <p>Developer portfolio showcasing projects and technical skills. Powered by Astro for fast performance and styled with Tailwind CSS for a modern, fully responsive design that works seamlessly across all devices.</p>
